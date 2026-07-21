@@ -9,7 +9,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.layout.weight
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -19,6 +18,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -67,9 +67,7 @@ fun HomeScreen(
             ExtendedFloatingActionButton(
                 onClick = onWhatToDrink,
                 icon = {
-                    Text(
-                        text = "💡"
-                    )
+                    Text(text = "💡")
                 },
                 text = {
                     Text(
@@ -81,6 +79,7 @@ fun HomeScreen(
             )
         }
     ) { innerPadding ->
+
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -106,6 +105,7 @@ fun HomeScreen(
             )
 
             state.topSuggestion?.let { suggestion ->
+
                 NooshCard {
                     Text(
                         text = stringResource(
@@ -164,6 +164,7 @@ fun HomeScreen(
                     )
 
                     Row(
+                        modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.spacedBy(8.dp)
                     ) {
                         SecondaryButton(
@@ -245,11 +246,11 @@ fun HomeScreen(
             )
 
             ProgressBar(
-                title = stringResource(
+                label = stringResource(
                     R.string.water_progress
                 ),
                 progress = state.waterProgress,
-                label = "${state.waterMl}/${state.waterGoal} ml"
+                displayText = "${state.waterMl}/${state.waterGoal} ml"
             )
 
             Spacer(
@@ -257,11 +258,11 @@ fun HomeScreen(
             )
 
             ProgressBar(
-                title = stringResource(
+                label = stringResource(
                     R.string.caffeine_progress
                 ),
                 progress = state.caffeineProgress,
-                label = "${state.caffeineMg}/${state.caffeineLimit} mg"
+                displayText = "${state.caffeineMg}/${state.caffeineLimit} mg"
             )
 
             Spacer(
@@ -269,13 +270,13 @@ fun HomeScreen(
             )
 
             ProgressBar(
-                title = stringResource(
+                label = stringResource(
                     R.string.time_to_sleep
                 ),
                 progress = 1f - (
                     state.hoursToSleep / 16f
                     ).coerceIn(0f, 1f),
-                label = String.format(
+                displayText = String.format(
                     "%.1f ساعت",
                     state.hoursToSleep
                 )
