@@ -1,18 +1,35 @@
 package com.nooshyar.app.presentation.home
 
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.weight
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.*
-import androidx.compose.runtime.*
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.ExtendedFloatingActionButton
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.nooshyar.app.R
-import com.nooshyar.app.core.ui.components.*
-import com.nooshyar.app.presentation.navigation.Routes
+import com.nooshyar.app.core.ui.components.NooshCard
+import com.nooshyar.app.core.ui.components.PrimaryButton
+import com.nooshyar.app.core.ui.components.ProgressBar
+import com.nooshyar.app.core.ui.components.SecondaryButton
+import com.nooshyar.app.core.ui.components.StatCard
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -25,69 +42,248 @@ fun HomeScreen(
 
     Scaffold(
         topBar = {
-            TopAppBar(title = {
-                Column {
-                    Text(stringResource(R.string.greeting, state.userName))
-                    Text(state.jalaliDate, style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f))
+            TopAppBar(
+                title = {
+                    Column {
+                        Text(
+                            text = stringResource(
+                                R.string.greeting,
+                                state.userName
+                            )
+                        )
+
+                        Text(
+                            text = state.jalaliDate,
+                            style = MaterialTheme.typography.labelMedium,
+                            color = MaterialTheme.colorScheme.onSurface.copy(
+                                alpha = 0.6f
+                            )
+                        )
+                    }
                 }
-            })
+            )
         },
         floatingActionButton = {
-            ExtendedFloatingActionButton(onClick = onWhatToDrink, icon = { Text("💡") }, text = { Text(stringResource(R.string.what_to_drink_now)) })
+            ExtendedFloatingActionButton(
+                onClick = onWhatToDrink,
+                icon = {
+                    Text(
+                        text = "💡"
+                    )
+                },
+                text = {
+                    Text(
+                        text = stringResource(
+                            R.string.what_to_drink_now
+                        )
+                    )
+                }
+            )
         }
-    ) { padding ->
+    ) { innerPadding ->
         Column(
-            Modifier.fillMaxSize().padding(padding).padding(horizontal = 16.dp).verticalScroll(rememberScrollState())
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(innerPadding)
+                .padding(horizontal = 16.dp)
+                .verticalScroll(rememberScrollState())
         ) {
-            Text(state.dailyInsight, style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.secondary, modifier = Modifier.padding(vertical = 8.dp))
-            Text(state.currentTime, style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary)
+            Text(
+                text = state.dailyInsight,
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.secondary,
+                modifier = Modifier.padding(vertical = 8.dp)
+            )
 
-            Spacer(Modifier.height(16.dp))
+            Text(
+                text = state.currentTime,
+                style = MaterialTheme.typography.labelLarge,
+                color = MaterialTheme.colorScheme.primary
+            )
+
+            Spacer(
+                modifier = Modifier.height(16.dp)
+            )
 
             state.topSuggestion?.let { suggestion ->
                 NooshCard {
-                    Text(stringResource(R.string.current_suggestion), style = MaterialTheme.typography.labelMedium)
-                    Spacer(Modifier.height(8.dp))
+                    Text(
+                        text = stringResource(
+                            R.string.current_suggestion
+                        ),
+                        style = MaterialTheme.typography.labelMedium
+                    )
+
+                    Spacer(
+                        modifier = Modifier.height(8.dp)
+                    )
+
                     Row {
-                        Text(suggestion.drink.icon, style = MaterialTheme.typography.headlineLarge)
-                        Spacer(Modifier.width(12.dp))
+                        Text(
+                            text = suggestion.drink.icon,
+                            style = MaterialTheme.typography.headlineLarge
+                        )
+
+                        Spacer(
+                            modifier = Modifier.width(12.dp)
+                        )
+
                         Column {
-                            Text(suggestion.drink.nameFa, style = MaterialTheme.typography.titleLarge)
+                            Text(
+                                text = suggestion.drink.nameFa,
+                                style = MaterialTheme.typography.titleLarge
+                            )
+
                             suggestion.reasons.forEach { reason ->
-                                Text("• $reason", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f))
+                                Text(
+                                    text = "• $reason",
+                                    style = MaterialTheme.typography.bodySmall,
+                                    color = MaterialTheme.colorScheme.onSurface.copy(
+                                        alpha = 0.7f
+                                    )
+                                )
                             }
                         }
                     }
-                    Spacer(Modifier.height(12.dp))
-                    PrimaryButton(stringResource(R.string.i_consumed)) { viewModel.acceptSuggestion(onLogDrink) }
-                    Spacer(Modifier.height(8.dp))
-                    Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                        SecondaryButton(stringResource(R.string.another_suggestion), { viewModel.refreshSuggestion() }, Modifier.weight(1f))
-                        SecondaryButton(stringResource(R.string.not_now), { viewModel.rejectSuggestion() }, Modifier.weight(1f))
+
+                    Spacer(
+                        modifier = Modifier.height(12.dp)
+                    )
+
+                    PrimaryButton(
+                        text = stringResource(
+                            R.string.i_consumed
+                        ),
+                        onClick = {
+                            viewModel.acceptSuggestion(onLogDrink)
+                        }
+                    )
+
+                    Spacer(
+                        modifier = Modifier.height(8.dp)
+                    )
+
+                    Row(
+                        horizontalArrangement = Arrangement.spacedBy(8.dp)
+                    ) {
+                        SecondaryButton(
+                            text = stringResource(
+                                R.string.another_suggestion
+                            ),
+                            onClick = {
+                                viewModel.refreshSuggestion()
+                            },
+                            modifier = Modifier.weight(1f)
+                        )
+
+                        SecondaryButton(
+                            text = stringResource(
+                                R.string.not_now
+                            ),
+                            onClick = {
+                                viewModel.rejectSuggestion()
+                            },
+                            modifier = Modifier.weight(1f)
+                        )
                     }
                 }
             }
 
-            Spacer(Modifier.height(16.dp))
+            Spacer(
+                modifier = Modifier.height(16.dp)
+            )
 
-            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                StatCard(stringResource(R.string.water_consumed), "${state.waterMl} ml", Modifier.weight(1f))
-                StatCard(stringResource(R.string.caffeine_consumed), "${state.caffeineMg} mg", Modifier.weight(1f))
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(8.dp)
+            ) {
+                StatCard(
+                    title = stringResource(
+                        R.string.water_consumed
+                    ),
+                    value = "${state.waterMl} ml",
+                    modifier = Modifier.weight(1f)
+                )
+
+                StatCard(
+                    title = stringResource(
+                        R.string.caffeine_consumed
+                    ),
+                    value = "${state.caffeineMg} mg",
+                    modifier = Modifier.weight(1f)
+                )
             }
-            Spacer(Modifier.height(8.dp))
-            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                StatCard(stringResource(R.string.drink_count), state.drinkCount.toString(), Modifier.weight(1f))
-                StatCard(stringResource(R.string.last_drink), state.lastDrinkTime ?: stringResource(R.string.none), Modifier.weight(1f))
+
+            Spacer(
+                modifier = Modifier.height(8.dp)
+            )
+
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(8.dp)
+            ) {
+                StatCard(
+                    title = stringResource(
+                        R.string.drink_count
+                    ),
+                    value = state.drinkCount.toString(),
+                    modifier = Modifier.weight(1f)
+                )
+
+                StatCard(
+                    title = stringResource(
+                        R.string.last_drink
+                    ),
+                    value = state.lastDrinkTime
+                        ?: stringResource(R.string.none),
+                    modifier = Modifier.weight(1f)
+                )
             }
 
-            Spacer(Modifier.height(16.dp))
-            ProgressBar(stringResource(R.string.water_progress), state.waterProgress, "${state.waterMl}/${state.waterGoal} ml")
-            Spacer(Modifier.height(12.dp))
-            ProgressBar(stringResource(R.string.caffeine_progress), state.caffeineProgress, "${state.caffeineMg}/${state.caffeineLimit} mg")
-            Spacer(Modifier.height(12.dp))
-            ProgressBar(stringResource(R.string.time_to_sleep), 1f - (state.hoursToSleep / 16f).coerceIn(0f, 1f), String.format("%.1f ساعت", state.hoursToSleep))
+            Spacer(
+                modifier = Modifier.height(16.dp)
+            )
 
-            Spacer(Modifier.height(80.dp))
+            ProgressBar(
+                title = stringResource(
+                    R.string.water_progress
+                ),
+                progress = state.waterProgress,
+                label = "${state.waterMl}/${state.waterGoal} ml"
+            )
+
+            Spacer(
+                modifier = Modifier.height(12.dp)
+            )
+
+            ProgressBar(
+                title = stringResource(
+                    R.string.caffeine_progress
+                ),
+                progress = state.caffeineProgress,
+                label = "${state.caffeineMg}/${state.caffeineLimit} mg"
+            )
+
+            Spacer(
+                modifier = Modifier.height(12.dp)
+            )
+
+            ProgressBar(
+                title = stringResource(
+                    R.string.time_to_sleep
+                ),
+                progress = 1f - (
+                    state.hoursToSleep / 16f
+                    ).coerceIn(0f, 1f),
+                label = String.format(
+                    "%.1f ساعت",
+                    state.hoursToSleep
+                )
+            )
+
+            Spacer(
+                modifier = Modifier.height(80.dp)
+            )
         }
     }
 }
