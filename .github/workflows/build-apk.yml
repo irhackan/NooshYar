@@ -20,16 +20,18 @@ jobs:
         with:
           distribution: temurin
           java-version: "17"
-          cache: gradle
 
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
 
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v6
+        with:
+          gradle-version: "8.9"
+          validate-wrappers: false
+
       - name: Build Debug APK
-        run: |
-          java -classpath gradle/wrapper/gradle-wrapper.jar \
-          org.gradle.wrapper.GradleWrapperMain \
-          assembleDebug --no-daemon --stacktrace
+        run: gradle assembleDebug --no-daemon --stacktrace
 
       - name: Upload Debug APK
         uses: actions/upload-artifact@v4
