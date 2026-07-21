@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">نوش‌یار</string>
+    <string name="app_tagline">هر زمان، نوشیدنی مناسب‌تر</string>
+    <string name="developer_name">کاظم دهناد</string>
+    <string name="developer_email">irhackan@gmail.com</string>
+    <string name="developer_credit">طراح و برنامه‌نویس: کاظم دهناد</string>
+    <string name="health_disclaimer">نوش‌یار یک ابزار ثبت عادت‌ها و ارائه پیشنهادهای عمومی سبک زندگی است و جایگزین نظر پزشک، متخصص تغذیه یا سایر متخصصان سلامت نیست. مقدار کافئین و مواد غذایی نمایش‌داده‌شده تخمینی است.</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">خانه</string>
+    <string name="nav_log">ثبت</string>
+    <string name="nav_suggest">پیشنهاد</string>
+    <string name="nav_reports">گزارش‌ها</string>
+    <string name="nav_profile">پروفایل</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_1_title">نوشیدنی‌های روزانه‌ات را ثبت کن</string>
+    <string name="onboarding_1_desc">آب، قهوه، چای، دمنوش و سایر نوشیدنی‌های خود را در چند ثانیه ثبت کن.</string>
+    <string name="onboarding_2_title">مصرف کافئین را بشناس</string>
+    <string name="onboarding_2_desc">مقدار تقریبی کافئین دریافت‌شده و کافئین باقی‌مانده در بدن را مشاهده کن.</string>
+    <string name="onboarding_3_title">پیشنهاد شخصی دریافت کن</string>
+    <string name="onboarding_3_desc">بر اساس زمان، خواب، انرژی، فشار کاری و مصرف قبلی، نوشیدنی مناسب‌تری انتخاب کن.</string>
+    <string name="onboarding_4_title">عادت‌های خود را تحلیل کن</string>
+    <string name="onboarding_4_desc">گزارش روزانه و هفتگی دریافت کن.</string>
+    <string name="start_using">شروع استفاده</string>
+    <string name="next">بعدی</string>
+    <string name="skip">رد کردن</string>
+
+    <!-- Home -->
+    <string name="greeting">سلام، %1$s</string>
+    <string name="what_to_drink_now">الان چه بنوشم؟</string>
+    <string name="current_suggestion">پیشنهاد فعلی شما</string>
+    <string name="i_consumed">مصرف کردم</string>
+    <string name="another_suggestion">پیشنهاد دیگر</string>
+    <string name="not_now">الان مناسب نیست</string>
+    <string name="water_consumed">آب مصرف‌شده</string>
+    <string name="caffeine_consumed">کافئین مصرف‌شده</string>
+    <string name="drink_count">تعداد نوشیدنی</string>
+    <string name="last_drink">آخرین نوشیدنی</string>
+    <string name="water_progress">پیشرفت آب</string>
+    <string name="caffeine_progress">پیشرفت کافئین</string>
+    <string name="time_to_sleep">فاصله تا خواب</string>
+    <string name="ml">میلی‌لیتر</string>
+    <string name="mg">میلی‌گرم</string>
+    <string name="none">—</string>
+    <string name="estimate_label">(تخمین)</string>
+
+    <!-- Log -->
+    <string name="log_drink">ثبت نوشیدنی</string>
+    <string name="search_drinks">جست‌وجوی نوشیدنی…</string>
+    <string name="recent_drinks">سوابق اخیر</string>
+    <string name="popular_drinks">پرمصرف‌ها</string>
+    <string name="volume">حجم</string>
+    <string name="servings">تعداد</string>
+    <string name="time">ساعت مصرف</string>
+    <string name="mood">وضعیت</string>
+    <string name="note">توضیح</string>
+    <string name="save">ذخیره</string>
+    <string name="cancel">انصراف</string>
+    <string name="delete">حذف</string>
+    <string name="edit">ویرایش</string>
+    <string name="confirm_delete">آیا از حذف این مصرف مطمئن هستید؟</string>
+    <string name="yes">بله</string>
+    <string name="no">خیر</string>
+    <string name="log_success">نوشیدنی با موفقیت ثبت شد</string>
+    <string name="caffeine_added">این نوشیدنی حدود %1$d میلی‌گرم کافئین به مصرف امروز شما اضافه کرد.</string>
+
+    <!-- Suggest -->
+    <string name="how_do_you_feel">الان چه احساسی دارید؟</string>
+    <string name="time_until_sleep">تا زمان خواب چقدر مانده؟</string>
+    <string name="current_activity">فعالیت فعلی شما چیست؟</string>
+    <string name="temperature_pref">نوشیدنی گرم یا سرد؟</string>
+    <string name="get_suggestions">دریافت پیشنهاد</string>
+    <string name="suggestion_score">امتیاز تناسب: %1$d</string>
+    <string name="suggested_amount">مقدار پیشنهادی: %1$d میلی‌لیتر</string>
+    <string name="approx_caffeine">کافئین تقریبی: %1$d میلی‌گرم</string>
+    <string name="reason">دلیل پیشنهاد</string>
+
+    <!-- Reports -->
+    <string name="daily_report">گزارش روزانه</string>
+    <string name="weekly_report">گزارش هفتگی</string>
+    <string name="monthly_report">ماهانه</string>
+    <string name="yearly_report">سالانه</string>
+    <string name="calendar">تقویم</string>
+    <string name="history">تاریخچه</string>
+    <string name="total_drinks">تعداد نوشیدنی‌ها</string>
+    <string name="total_volume">حجم کل</string>
+    <string name="total_caffeine">مجموع کافئین</string>
+    <string name="total_sugar">مجموع قند</string>
+    <string name="total_water">مجموع آب</string>
+    <string name="first_drink">اولین نوشیدنی</string>
+    <string name="most_consumed">بیشترین مصرف</string>
+    <string name="avg_water">میانگین آب</string>
+    <string name="avg_caffeine">میانگین کافئین</string>
+    <string name="popular_drink">محبوب‌ترین نوشیدنی</string>
+    <string name="popular_hour">محبوب‌ترین ساعت</string>
+    <string name="busiest_weekday">پرمصرف‌ترین روز هفته</string>
+    <string name="busiest_month">پرمصرف‌ترین ماه</string>
+    <string name="compare_last_week">مقایسه با هفته قبل</string>
+    <string name="coffee_cups">فنجان قهوه</string>
+    <string name="tea_cups">لیوان چای</string>
+    <string name="decaf_count">بدون کافئین</string>
+    <string name="days_over_limit">روزهای عبور از حد</string>
+    <string name="best_day">بهترین روز</string>
+    <string name="attention_day">روز نیازمند توجه</string>
+    <string name="habit_tip">پیشنهاد اصلاح عادت</string>
+    <string name="yearly_highlight">خلاصه سالانه شما</string>
+    <string name="logged_days">روزهای ثبت‌شده</string>
+    <string name="accepted_suggestions">پیشنهادهای پذیرفته‌شده</string>
+    <string name="status_complete">کامل</string>
+    <string name="status_balanced">متعادل</string>
+    <string name="status_low_water">آب کم</string>
+    <string name="status_high_caffeine">کافئین زیاد</string>
+    <string name="no_data">داده‌ای ثبت نشده است</string>
+    <string name="filter">فیلتر</string>
+    <string name="all">همه</string>
+    <string name="caffeinated">کافئین‌دار</string>
+    <string name="decaf">بدون کافئین</string>
+    <string name="export_backup">خروجی پشتیبان (JSON)</string>
+    <string name="import_backup">بازیابی از پشتیبان</string>
+    <string name="backup_success">پشتیبان آماده اشتراک‌گذاری است</string>
+    <string name="import_success">%1$d مورد با موفقیت بازیابی شد</string>
+    <string name="import_failed">بازیابی ناموفق بود</string>
+    <string name="paste_backup_json">متن JSON پشتیبان را بچسبانید</string>
+
+    <!-- Profile -->
+    <string name="profile">پروفایل</string>
+    <string name="name">نام</string>
+    <string name="age">سن</string>
+    <string name="weight">وزن (کیلوگرم)</string>
+    <string name="height">قد (سانتی‌متر)</string>
+    <string name="wake_time">ساعت بیداری</string>
+    <string name="sleep_time">ساعت خواب</string>
+    <string name="caffeine_limit">حد روزانه کافئین</string>
+    <string name="water_goal">هدف آب روزانه</string>
+    <string name="caffeine_half_life">نیمه‌عمر کافئین (ساعت)</string>
+    <string name="activity_level">فعالیت روزانه</string>
+    <string name="work_pressure">فشار کاری</string>
+    <string name="caffeine_sensitivity">حساسیت به کافئین</string>
+    <string name="goals">اهداف</string>
+    <string name="preferences">ترجیحات نوشیدنی</string>
+    <string name="liked_drinks">موردعلاقه</string>
+    <string name="disliked_drinks">نامطلوب</string>
+    <string name="notifications">اعلان‌ها</string>
+    <string name="theme">ظاهر</string>
+    <string name="theme_light">روشن</string>
+    <string name="theme_dark">تاریک</string>
+    <string name="theme_system">پیروی از دستگاه</string>
+    <string name="about">درباره برنامه</string>
+    <string name="about_title">درباره نوش‌یار</string>
+    <string name="about_desc">نوش‌یار با هدف کمک به مدیریت آگاهانه مصرف نوشیدنی، آب و کافئین طراحی شده است. این برنامه با تحلیل زمان، عادت‌ها و وضعیت روزانه، پیشنهادهایی ساده و شخصی‌سازی‌شده ارائه می‌کند.</string>
+    <string name="version">نسخه %1$s</string>
+    <string name="privacy_policy">سیاست حریم خصوصی</string>
+    <string name="privacy_text">اطلاعات شما فقط روی دستگاه شما ذخیره می‌شود و بدون رضایت شما ارسال نمی‌گردد. می‌توانید هر زمان تمام داده‌ها را حذف کنید.</string>
+    <string name="delete_all_data">حذف تمام اطلاعات</string>
+    <string name="confirm_delete_all">تمام اطلاعات شما حذف خواهد شد. ادامه می‌دهید؟</string>
+    <string name="save_profile">ذخیره پروفایل</string>
+    <string name="setup_profile">ساخت پروفایل</string>
+    <string name="continue_btn">ادامه</string>
+
+    <!-- Levels -->
+    <string name="level_low">کم</string>
+    <string name="level_medium">متوسط</string>
+    <string name="level_high">زیاد</string>
+
+    <!-- Goals -->
+    <string name="goal_water">افزایش مصرف آب</string>
+    <string name="goal_caffeine">کنترل کافئین</string>
+    <string name="goal_sleep">بهبود خواب</string>
+    <string name="goal_sugar">کاهش قند</string>
+    <string name="goal_focus">افزایش تمرکز</string>
+    <string name="goal_energy">کاهش نوشیدنی انرژی‌زا</string>
+    <string name="goal_habit">ثبت عادت‌ها</string>
+    <string name="goal_balance">حفظ تعادل</string>
+
+    <!-- Moods -->
+    <string name="mood_thirsty">تشنه</string>
+    <string name="mood_tired">خسته</string>
+    <string name="mood_low_energy">کم‌انرژی</string>
+    <string name="mood_anxious">مضطرب</string>
+    <string name="mood_focus">نیازمند تمرکز</string>
+    <string name="mood_calm">آرام</string>
+    <string name="mood_happy">خوشحال</string>
+    <string name="mood_bored">بی‌حوصله</string>
+    <string name="mood_after_sport">بعد از ورزش</string>
+    <string name="mood_with_food">همراه غذا</string>
+    <string name="mood_none">بدون دلیل خاص</string>
+
+    <!-- Feelings for suggest -->
+    <string name="feel_tired">خسته‌ام</string>
+    <string name="feel_thirsty">تشنه‌ام</string>
+    <string name="feel_focus">نیاز به تمرکز دارم</string>
+    <string name="feel_anxious">مضطبم</string>
+    <string name="feel_hot">احساس گرما دارم</string>
+    <string name="feel_cold">احساس سرما دارم</string>
+    <string name="feel_rest">قصد استراحت دارم</string>
+    <string name="feel_tasty">فقط یک نوشیدنی خوش‌طعم می‌خواهم</string>
+
+    <!-- Activities -->
+    <string name="act_work">کار</string>
+    <string name="act_study">مطالعه</string>
+    <string name="act_meeting">جلسه</string>
+    <string name="act_driving">رانندگی</string>
+    <string name="act_exercise">ورزش</string>
+    <string name="act_rest">استراحت</string>
+    <string name="act_eating">صرف غذا</string>
+
+    <!-- Temperature -->
+    <string name="temp_hot">گرم</string>
+    <string name="temp_cold">سرد</string>
+    <string name="temp_any">تفاوتی ندارد</string>
+
+    <!-- Notifications -->
+    <string name="notif_water_title">یادآوری آب</string>
+    <string name="notif_water_body">از آخرین نوشیدنی شما مدتی گذشته است. یک لیوان آب می‌تواند انتخاب مناسبی باشد.</string>
+    <string name="notif_caffeine_title">هشدار کافئین</string>
+    <string name="notif_caffeine_body">تا زمان خواب کم مانده و کافئین فعال شما هنوز بالاست. نوشیدنی بدون کافئین پیشنهاد می‌شود.</string>
+    <string name="notif_daily_title">خلاصه روز</string>
+    <string name="notif_daily_body">امروز %1$d نوشیدنی ثبت کردید و %2$d میلی‌گرم کافئین دریافت کردید.</string>
+    <string name="notif_channel_water">یادآوری آب</string>
+    <string name="notif_channel_caffeine">هشدار کافئین</string>
+    <string name="notif_channel_daily">گزارش روزانه</string>
+</resources>
