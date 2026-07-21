@@ -49,7 +49,9 @@ fun SuggestScreen(
             TopAppBar(
                 title = {
                     Text(
-                        text = stringResource(R.string.what_to_drink_now)
+                        text = stringResource(
+                            R.string.what_to_drink_now
+                        )
                     )
                 }
             )
@@ -155,7 +157,7 @@ fun SuggestScreen(
                         onLog = {
                             viewModel.logSuggestion(
                                 suggestion = suggestion,
-                                onLogged = onLogged
+                                onDone = onLogged
                             )
                         }
                     )
@@ -176,10 +178,7 @@ fun SuggestScreen(
     }
 }
 
-@OptIn(
-    ExperimentalMaterial3Api::class,
-    ExperimentalLayoutApi::class
-)
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 private fun QuestionSection(
     title: String,
